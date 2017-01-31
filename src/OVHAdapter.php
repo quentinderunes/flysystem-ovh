@@ -144,7 +144,7 @@ class OVHAdapter extends AbstractAdapter
     {
         $paths = [];
         $prefix = '/'.$this->container->getName().'/';
-        $location = $this->applyPathPrefix($dirname);
+        $location = rtrim($this->applyPathPrefix($dirname), '/').'/';
         $objects = $this->container->objectList(['prefix' => $location]);
 
         foreach ($objects as $object) {
